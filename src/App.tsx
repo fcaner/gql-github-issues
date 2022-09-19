@@ -8,23 +8,6 @@ import { ErrorPage } from "./components/ErrorPage/ErrorPage";
 import { IssueList } from "./components/IssueList/IssueList";
 
 function App() {
-  // interface response {
-  //   data: {
-  //     repository: {
-  //       issues: {
-  //         edges: [
-  //           {
-  //             node: {
-  //               title: String;
-  //               url: String;
-  //             };
-  //           }
-  //         ];
-  //       };
-  //     };
-  //   };
-  // }
-
   const { loading, error, data } = useQuery(GET_ISSUES);
   if (loading) return <LoadingPage />;
   if (error) return <ErrorPage message={error.message} />;
