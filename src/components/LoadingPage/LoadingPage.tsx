@@ -1,5 +1,5 @@
-
+import "./LoadingPage.scss";
 
 export const LoadingPage = () => {
-    return <div>Loading</div>
-}
+  return <div className="loader"></div>;
+};
