@@ -1,0 +1,73 @@
+.table {
+}
+
+.row {
+  width: 100%;
+  padding: 15px 20px;
+  display: inline-block;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  border: 1px #d0d7de solid;
+  &:hover {
+    background-color: #f6f8fa;
+  }
+}
+
+.cell {
+}
+
+input[type="text"] {
+  padding: 12px 20px;
+  box-sizing: border-box;
+  background-color: #f6f8fa;
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+  border: none;
+  width: 100%;
+}
+
+.filter {
+  width: 98%;
+  background-color: #f6f8fa;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding-left: 2%;
+  margin-bottom: 10px;
+  margin-right: 30px;
+}
+
+.app {
+  margin: 30px 30px;
+}
+
+.button {
+  display: inline-block;
+  padding: 0 20px;
+  height: 40px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: unset;
+}
+
+.buttonrow {
+  width: 100%;
+  background-color: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.header {
+  width: 100%;
+  background-color: #24292e;
+  height: 60px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
