@@ -1,4 +1,4 @@
-import React, { BaseSyntheticEvent, FormEvent, Key, useState } from "react";
+import { BaseSyntheticEvent, Key, useState } from "react";
 import { Issue } from "../../interfaces/issue";
 import "./IssueList.scss";
 
@@ -17,7 +17,6 @@ export const IssueList = (props: Props) => {
   };
 
   const handleFilter = (event: BaseSyntheticEvent) => {
-    console.log(event);
     setSearchText(event.target.value);
     const newList = props.issues.filter((ttl) => {
       return (
