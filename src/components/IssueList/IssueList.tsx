@@ -1,15 +1,16 @@
-import { BaseSyntheticEvent, Key, useState } from "react";
-import { Issue } from "../../interfaces/issue";
+import { BaseSyntheticEvent, Key, useCallback, useState } from "react";
+import { ISSUE } from "../../interfaces/issue";
 import "./IssueList.scss";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
-  issues: [Issue];
+  issues: [ISSUE];
 }
 
 export const IssueList = (props: Props) => {
   const [currentSearchText, setSearchText] = useState("");
 
-  const [initialList, setFilteredList] = useState<Issue[]>(props.issues);
+  const [initialList, setFilteredList] = useState<ISSUE[]>(props.issues);
 
   const resetSearch = () => {
     setSearchText("");
@@ -20,8 +21,10 @@ export const IssueList = (props: Props) => {
     setSearchText(event.target.value);
     const newList = props.issues.filter((ttl) => {
       return (
-        ttl.node.title.includes(event.target.value) ||
-        ttl.node.body.includes(event.target.value)
+        ttl.node.title
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase()) ||
+        ttl.node.body.toLowerCase().includes(event.target.value.toLowerCase())
       );
     });
     setFilteredList(newList);
@@ -38,9 +41,15 @@ export const IssueList = (props: Props) => {
       : setFilteredList(newList);
   };
 
+  const navigate = useNavigate();
+  const handleOnClick = useCallback(
+    (x: BaseSyntheticEvent) =>
+      navigate(`/${x.target.id}/detail`, { replace: true }),
+    [navigate]
+  );
+
   return (
     <>
-      <div className="header">React Repo Issues</div>
       <div className="app">
         <div className="filter">
           <label>Filter</label>
@@ -71,12 +80,21 @@ export const IssueList = (props: Props) => {
         </div>
 
         {initialList.length > 0 ? (
-          initialList.map((item: Issue, i: Key) => {
+          initialList.map((item: ISSUE, i: Key) => {
             return (
               <div className="table">
-                <div className="row" key={i}>
-                  <div className="cell"> {item.node.title}</div>
-                  <div className="cell">{item.node.state}</div>
+                <div
+                  id={item.node.id}
+                  className="row"
+                  key={i}
+                  onClick={handleOnClick}
+                >
+                  <div className="cell" id={item.node.id}>
+                    {item.node.title}
+                  </div>
+                  <div className="cell" id={item.node.id}>
+                    {item.node.state}
+                  </div>
                 </div>
               </div>
             );

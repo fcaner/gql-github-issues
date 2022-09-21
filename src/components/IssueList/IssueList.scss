@@ -2,6 +2,7 @@
 }
 
 .row {
+  cursor: pointer;
   width: 100%;
   padding: 15px 20px;
   display: inline-block;
@@ -40,10 +41,6 @@ input[type="text"] {
   margin-right: 30px;
 }
 
-.app {
-  margin: 30px 30px;
-}
-
 .button {
   display: inline-block;
   padding: 0 20px;
@@ -60,14 +57,4 @@ input[type="text"] {
   border: 1px solid #d0d7de;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-}
-
-.header {
-  width: 100%;
-  background-color: #24292e;
-  height: 60px;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  padding-left: 30px;
 }

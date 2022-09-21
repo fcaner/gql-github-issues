@@ -1,0 +1,28 @@
+.comment,
+.titleBody {
+  width: 100%;
+  padding: 16px;
+  overflow: visible;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 28px;
+  padding: 15px;
+  margin: 10px;
+}
+
+.commentInfo {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f5f8fa;
+  border-bottom: 1px solid #d0d7de;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.date {
+  float: right;
+}

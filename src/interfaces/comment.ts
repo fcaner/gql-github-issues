@@ -1,5 +1,11 @@
-export interface Comment {
+export interface ISSUE_COMMENT {
   node: {
-    body: String;
+    publishedAt: string;
+    body: string;
+    id: string;
+    author: {
+      login: string;
+    };
   };
 }
+[];

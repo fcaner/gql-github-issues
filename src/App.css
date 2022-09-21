@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+    background-color: #24292e;
+    height: 60px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: unset;
+}
+
+.app {
+    margin: 15px;
+}
+
